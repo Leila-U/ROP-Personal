@@ -44,50 +44,51 @@ matters like my friend's wedding and holidays so I was not able to read up on GR
 \subsection{Parallel programming}
 
 \subsubsection{My Computer Specs and AWS}
-One of the first thing that any parallel R tells you to do is call \verb|detectCores(logical = True)| and \verb|detectCores(logical = False)|.
-This function should tell the number of available hardware threads and cores. For my computer, I have 4 threads and 2 processors. 
-Since I have only 2 cores, I have been very careful on trying small parallel programming tasks on my laptop, but Jishnu and I have 
-been discussing and for now we are hoping to test future, bigger code on his computer with smaller sets up data before moving to AWS. 
+The first function that any parallel R tutorial tells you to call is \verb|detectCores(logical = True)| and \verb|detectCores(logical = False)|.
+This function returns the number of available hardware threads and cores. For my computer, I have 4 threads and 2 processors. Since I have only 
+2 cores, I have been very careful on trying small parallel programming tasks on my laptop, but Jishnu and I started discussions on possibilities 
+for small-scale testing to avoid unneccessary AWS charges. We are hoping to test future code on his computer with smaller data sets before 
+moving to AWS. This would include experimenting with parsec (access via cloud), live coding, or constant communication of GitHub updates 
+(pull requests). 
 
 \subsubsection{R}
 I went through \textbf{many} resources for parallel R. Some resources were good \cite{gera2020, hallquist2018, martius2020, tinakarimi2020} 
 and some were bad. One of the main things that I discovered is that parallel R will work differently depending on the OS of your computer. For example, I was encountering problems with some functions 
-in the parallel package in Windows. The function \verb|mclapply| will not work in parallel because of how workers are managed. In addition, 
+in the R parallel package in Windows. The function \verb|mclapply| will not work in parallel because of how workers are managed. In addition, 
 a socket cluster and fork cluster are different and forking will only work in a Unix-like system \cite{hallquist2018}.
 
-\subsubsection{Code Base}
+\subsubsection{Code Base and Amdahl's Law}
 I looked at the code base to get an idea of what it is trying to achieve and the steps it takes to achieve it, but one of the things I 
 want to do with the code base in the future is go line-by-line in-depth. From there, I want to create a simple flowchart of the code and 
-find the best place to preform parallelism similar to the figure below.
+find the best place to preform parallelism.
 \begin{figure}[h!]
-    \caption{Flowchart of a simple parallel process \cite{gera2020}}
+    \caption{Example of a flowchart of a simple parallel process \cite{gera2020}}
     \centering
     \includegraphics[scale=0.3]{flowchart.png}
 \end{figure}
 
 Also, I read about Amdahl's Law which is often used in parallel computing to predict theoretical speedup with multiple processors. \cite{hallquist2018}
-I really want to try predicting the speedup of parallelization and timing the proces afterwards to see if the prediction was close.
+I really want to try predicting the speedup of the parallelization then time the process to see if the prediction was close.
 
-\subsection{Checklist}
-So you know my current thought process, this is what I am hoping to look into doing next.
+\subsection{Future Tasks}
+This is what I am hoping to do next.
 \begin{itemize}
     \item Comment through the code base
-    \item Experiment with parallel GRASS with parallel R
+    \item Experiment with parallel GRASS + R
+    \item Set up a code sharing process for small scale testing
     \item Create a flow chart for a parallel version of the code base
-    \item Time the serial version of the code base and calculate Amdahl's Law
+    \item Time the serial version of the code base with small data sets and calculate Amdahl's Law
 \end{itemize}
 
 \section{Literature Review}
-Aside from the assigned readings, I did not look for other academic journals or publications but mainly blogs/videos/tutorials. The IPCC has many useful 
-reports and resources that will be useful in the future like the "Climate Change and Land" special report for August 2019. Regarding the emissions scenerio 
-report \cite{ipcc2000}, it gave me the idea that it would be interesting to create predictive maps of land change using several 
-factors. The emissions scenerio paper mentioned 3 main driving forces for the emissions scenerios: population, economic development, and structural and technological change. 
-For example, the paper mentions the expansion of biomass energy production in places like Asia, Africa, and Latin America. 
+The IPCC has many useful reports and resources that will be useful in the future like the "Climate Change and Land" special report for August 2019. 
+The assigned reading this week focused on greenhouse gas (GHG) scenerios ("alternative images of how the future might unfold" \cite{ipcc2000}). 
+They determined that there are 4 mains storylines (A1, A2, B1, B2) with 40 resulting scenerios. These scenerios were derived from several factors including 
+the 3 main driving forces: population prediction, economic development, and structural and technological change.
 
-In addition, it would interesting to map emissions from the past along with our land change maps. It would be interesting to create a visual representation of the land-use 
-emissions the article talks about like CO2 for deforestation and CH4 for farming. There is also the increase of GHG emissions from land use change and the decrease of emissions 
-from developed countires. 
-
+After reading the article, I had an idea that requires further discussion. It would be interesting to create interpolated GHG emission maps along with 
+our ecoregion maps to find patterns or spatial auto-correlation between the anthropo-scene and emissions.
+    
 
 % this info creates the bibliography
 % YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
