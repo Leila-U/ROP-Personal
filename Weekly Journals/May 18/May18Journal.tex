@@ -50,23 +50,23 @@ Since I have only 2 cores, I have been very careful on trying small parallel pro
 been discussing and for now we are hoping to test future, bigger code on his computer with smaller sets up data before moving to AWS. 
 
 \subsubsection{R}
-I went through \textbf{many} resources for parallel R. Some resources were good and some were bad. One of the main things that I discovered 
-is that parallel R will work differently depending on the OS of your computer. For example, I was encountering problems with some functions 
+I went through \textbf{many} resources for parallel R. Some resources were good \cite{gera2020, hallquist2018, martius2020, tinakarimi2020} 
+and some were bad. One of the main things that I discovered is that parallel R will work differently depending on the OS of your computer. For example, I was encountering problems with some functions 
 in the parallel package in Windows. The function \verb|mclapply| will not work in parallel because of how workers are managed. In addition, 
-a socket cluster and fork cluster are different and forking will only work in a Unix-like system.
+a socket cluster and fork cluster are different and forking will only work in a Unix-like system \cite{hallquist2018}.
 
 \subsubsection{Code Base}
 I looked at the code base to get an idea of what it is trying to achieve and the steps it takes to achieve it, but one of the things I 
 want to do with the code base in the future is go line-by-line in-depth. From there, I want to create a simple flowchart of the code and 
 find the best place to preform parallelism similar to the figure below.
 \begin{figure}[h!]
-    \caption{Flowchart of a simple parallel process}
+    \caption{Flowchart of a simple parallel process \cite{gera2020}}
     \centering
     \includegraphics[scale=0.3]{flowchart.png}
 \end{figure}
 
-Also, I read about Amdahl's Law which is often used in parallel computing to predict theoretical speedup with multiple processors. I really 
-want to try predicting the speedup of parallelization and timing the proces afterwards to see if the prediction was close.
+Also, I read about Amdahl's Law which is often used in parallel computing to predict theoretical speedup with multiple processors. \cite{hallquist2018}
+I really want to try predicting the speedup of parallelization and timing the proces afterwards to see if the prediction was close.
 
 \subsection{Checklist}
 So you know my current thought process, this is what I am hoping to look into doing next.
@@ -78,7 +78,16 @@ So you know my current thought process, this is what I am hoping to look into do
 \end{itemize}
 
 \section{Literature Review}
-Aside from the assigned readings, I did not look for other academic journals or publications but mainly blogs/videos/tutorials.
+Aside from the assigned readings, I did not look for other academic journals or publications but mainly blogs/videos/tutorials. The IPCC has many useful 
+reports and resources that will be useful in the future like the "Climate Change and Land" special report for August 2019. Regarding the emissions scenerio 
+report \cite{ipcc2000}, it gave me the idea that it would be interesting to create predictive maps of land change using several 
+factors. The emissions scenerio paper mentioned 3 main driving forces for the emissions scenerios: population, economic development, and structural and technological change. 
+For example, the paper mentions the expansion of biomass energy production in places like Asia, Africa, and Latin America. 
+
+In addition, it would interesting to map emissions from the past along with our land change maps. It would be interesting to create a visual representation of the land-use 
+emissions the article talks about like CO2 for deforestation and CH4 for farming. There is also the increase of GHG emissions from land use change and the decrease of emissions 
+from developed countires. 
+
 
 % this info creates the bibliography
 % YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
