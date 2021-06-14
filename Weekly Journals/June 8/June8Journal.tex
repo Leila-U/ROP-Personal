@@ -1,0 +1,85 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+% increase margins
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+
+% this puts two lines between paragraphs and no indent
+\usepackage[parfill]{parskip}
+
+% set up colors
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\usepackage{graphicx}
+
+\definecolor{torontoblue}{HTML}{00204E}
+\definecolor{linkblue}{HTML}{0000FF}
+
+% define hyperlink style
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=linkblue,urlcolor=linkblue,
+            anchorcolor=linkblue,citecolor=linkblue}
+
+
+%opening
+\title{Weekly Journal}
+\author{Leila Uy}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Work Update}
+This week, I played around with EC2 and S3 AWS, the code base, and read some articles. 
+\cite{carruthers2003invasive, wang2019potential, peng2017economic}
+
+\subsection{AWS}
+The majority of my time was spent getting familiar with EC2 and S3. I installed R in the instance and test ran some  
+simple R script through the terminal. I wanted to test R script that works on some sample data by connecting the EC2 
+instance and S3 bucket, but I got lost through the process. Although I made the bucket public, I kept getting a 403 
+Access Denied Error and Unable to locate credentials. There is so much documentation for AWS that I found myself 
+drowning in it with over 30 open tabs of documentation and Stack Overflow, but I want to try again this week as 
+a group.
+
+\subsection{Code Base}
+I was always told by a friend that if you want to learn code, you should always type it yourself to truly understand 
+the importance of each line. So after some frustration with AWS, I moved to the code base so I could start implementing 
+the non-parallel version of the K-means clustering code. I started an R Notebook and went through the code and checking 
+the data through the process using North Carolina as my study area. I changed the CRS of the boundary to WGS84 in 
+QGIS but I forgot to remove county boundaries so I used gUnaryUnion in R, which could be the reason why mask is not 
+working. I will attach my R Notebook when I submit this journal.
+
+\section{Literature Review}
+This week I mostly focused my articles on the effects of climate change on agriculture. An article by Peng et al. 
+discusses the importance of additional climatic variables (other than temperature and precipitation) on studying 
+the impacts of climate change on agriculture. They researched several variables like humidity, wind speed, sunshine 
+duration, and evaporation from agricultural data (rice, wheat, corn) from 1980 to 2010 in China. They found that 
+because the relationship between tempearture and other climatic variables are not static, the correlation varies 
+over time. For example although humidity tends to increase during climate change, humidity decreases during the 
+warmest months because of the increase in extremely high temperatures. In addition, wind speeds are expected to 
+increase because of climate change. Therefore, the omission of both humidity and wind speeds will result in the 
+underprediction of the cost of climate change. \cite{peng2017economic}
+
+Two other articles I read were focused around climate change, agriculture, and invasive plant species (IPS). The 
+potential of invasive plant expansion is expected to increase due to changing ecoregions resulting from climate 
+change. They used WorldClim data and found that the most important climatic suitability variable for IPS was 
+annual mean temperature and temperature seasonality. Places that predict to have the greatest risk of expansion 
+is Northern Europe, the UK, South America, North America, southwest China, and New Zealand.  \cite{wang2019potential} 
+An article published in 2003 talks about research of invasive species in agriculture. It foound that many exotic insect, weed, and 
+pathogen species are responsible for a large portion of the \$130 billion losses estimated to be caused by pests 
+each year. Although the United States's ARS scientists are taking great lengths to research invasive species, the 
+scope is too big. The number of exotic organisms plus the many that have not been recognized are making it difficult 
+for researchers to plan accordingly. \cite{carruthers2003invasive}
+
+
+
+% this info creates the bibliography
+% YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
+\bibliography{./agclimate.bib}
+\bibliographystyle{plain}
+
+
+\end{document}
