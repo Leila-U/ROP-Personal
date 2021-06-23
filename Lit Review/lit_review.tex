@@ -36,59 +36,17 @@
 % \end{abstract}
 
 \section{Literature Review}
-There is a growing part of research creating trajectories and looking at the effects of climate change 
-using past and present data. An IPCC emissions scenario report created four storylines and 40 scenarios.  
-One assessment looked at the combined impacts of climate change and acidification of agricultural crops 
-in Asia. They found that the Indian subcontinent would have lower agricultural productivity due to 
-projected temperature and precipitation. In contrast, regional climate change would benefit China, 
-increasing their agricultural output, but high levels of acidic deposition would offset any possible 
-beneficial impacts \cite{IPCC2000emissions}. Due to this natural relationship between climatic variables and 
-vegetation growth, the agricultural sector is extremely vulnerable to any changes witnessed by future climate 
-change scenarios whether directly or indirectly. 
 
-Ideally, if the correlation between temperature and additional climatic variables were fixed over time, predicting 
-the effects of climate change would be simple, but for example, the relationship between temperature and humidity 
-varies over time due to the distribution, intensity, and frequency of precipitation \cite{peng2017economic}. These 
-variables, in turn, rearrange the ecological suitability of the area for species including agricultural crops and 
-invasive plant species (IPS). Studies suggest that IPS have a large potential to result in landscape homogeneity at 
-ecoregional scales and compete with native plant species \cite{wang2019potential}. It is predicted that many exotic 
-insect, weed, and pathogen species were responsible for a large portion of the \$130 billion losses estimated to be 
-caused by pests each year in the United States' agricultural sector \cite{carruthers2003invasive}. In order to 
-predict the impacts of climate change on agriculture, there must be a way to explore the shifts in suitability for 
-different species' ranges. 
+There is a growing part of research creating trajectories and looking at the effects of climate change using past and present data. The Intergovernmental Panel on Climate Change (IPCC) has developed four storylines and 40 scenarios through their emissions scenario report \cite{IPCC2000emissions}.  An assessment by the IPCC measured the combined impacts of climate change and acidification of agricultural crops in Asia; the assessment predicts that agricultural productivity in the Indian subcontinent will reduce due to projected temperature and precipitation increases. In contrast, the assessment expects that regional climate change will lead to increased agricultural output in China, although high levels of acidic deposition may offset any possible benefits. This natural relationship between climatic variables and vegetation growth makes the agricultural sector vulnerable to any changes, directly or indirectly, witnessed by future climate change scenarios. 
 
-Geographical ecoregions are the identification of different regions that are similar in ecological and environmental 
-conditions. They are important when estimating the extent of suitable habitat for particular species including 
-agricultural crops and competing IPS. A simple search through academic papers on ecoregions will give you over a 
-hundred results because there is no established classification system. A 2001 study by Olson et al. \cite{olson2001terrestrial} 
-used human experts to create a detailed terrestrial ecoregion classification that was better suited to identify areas 
-of outstanding biodiversity. Another 2008 study by Ellis et al. \cite{ellis2008putting} introduced eighteen 
-anthropogenic biomes because previous global patterns of biodiversity either ignore or simplify the direct 
-interaction between humans and ecosystems. A 2014 study that included a collaboration between Esri, USGS, AAG, and 
-GEO \cite{globaleco2014a}, approached classification by stratifying the Earth into physically distinct areas with 
-their associated land covers. Traditional methods of classification often delineated ecoregions by hand and as a 
-consequence, results are often difficult to replicate, and introducing more variables and large data sets would 
-take a long time.
+The correlation between temperature and additional climatic variables fluctuates over time, and this can make predicting the effects of climate change complicated. For example, the relationship between temperature and humidity varies over time due to the distribution, intensity, and frequency of precipitation \cite{peng2017economic}. These variables, in turn, alter the ecological suitability of the area for species, including agricultural crops and invasive plant species (IPS). Wang et al. \cite{wang2019potential} suggests IPS  may result in landscape homogeneity at ecoregional scales as the invasive species will compete with native plant species. They estimate that, in the United States, many exotic insects, weeds, and pathogens were responsible for a large portion of the \$130 billion losses each year in the agricultural sector \cite{carruthers2003invasive}. To predict the impacts of climate change on agriculture, there must be a way to explore the shifts in suitability for different species' ranges. 
 
-As we grow into a new age with more accessible and higher resolution spatial data sets, it is important to create 
-an accurate, quick, and flexible classification system for determining ecoregions. K-means clustering was 
-independently discovered in different scientific fields as far back as the 1950s and remained popular to this 
-day due to its simple implementation which has introduced several extensions many years after its introduction 
-\cite{cuomo2019a,dunn1973a,jain2010data,pelleg1999accelerating,scholkopf1998nonlinear,tang2017parallel}. 
-A recent implementation of this multivariate statistical clustering algorithm is the integration of parallel 
-programming and computational optimization to speed up the process. Hargrove and Hoffman \cite{hargrove1999using} 
-developed a parallel multivariate geographic clustering algorithm in C using the Message Passing Interface (MPI). 
-Rather than relying on expertise for classification, individual raster cells were placed in a data space where 
-each dimension represented an environmental characteristic. So, if you were to look at precipitation, mean 
-temperature, and wind speeds, each individual raster cell would have a coordinate based on the three variables 
-(e.g. $u_{1} = (0, 1, 0)$). This implementation was later optimized by Kumar et al. \cite{kumar2011parallel} by using the 
-triangular inequality to remove unnecessary calculations.
+Geographical ecoregions consist of regions with similar ecological and environmental conditions. They are important to consider when estimating the extent of suitable habitat for particular species, including agricultural crops and competing IPS. While several academic papers have identified and classified ecoregions using different methods, there is no established classification system. A 2001 study by Olson et al. \cite{olson2001terrestrial} used human experts to create a detailed terrestrial ecoregion classification that was better suited to identify areas of outstanding biodiversity. Another 2008 study by Ellis et al. \cite{ellis2008putting} introduced eighteen anthropogenic biomes because previous global patterns of biodiversity either ignore or simplify the direct interaction between humans and ecosystems. A 2014 study that included a collaboration between the Association of American Geographers (AAG), the United States Geological Survey (USGS), Esri, and the Group on Earth Observations (GEO) \cite{globaleco2014a}, approached classification by stratifying the Earth into physically distinct areas with their associated land covers. Traditional methods of classification often delineate ecoregions by hand. Consequently, results are often difficult to replicate, and introducing more variables and large data sets takes a long time.
 
-The focus of the work reported here is the design and implementation of a parallel K-means clustering algorithm in 
-R that is easily adjusted for n variables, based on previous literature in parallel clustering and ecoregions. 
-Utilizing the computational powers of AWS EC2 machines and large historical and future climate data provided by 
-WorldClim, we are testing the accuracy, speed, and flexibility of the algorithm as a classification system for 
-predicting shifts in ecoregions as a result of climate change.
+
+As we grow into a new age with more accessible and higher resolution spatial data sets, it is important to create an accurate, quick, and flexible classification system for determining ecoregions. K-means clustering was independently discovered in different scientific fields as far back as the 1950s and remained popular due to its simple implementation, which has introduced several extensions many years after its introduction \cite{cuomo2019a,dunn1973a,jain2010data,pelleg1999accelerating,scholkopf1998nonlinear,tang2017parallel}. A recent implementation of this multivariate statistical clustering algorithm is the integration of parallel programming and computational optimization to speed up the process. Hargrove and Hoffman \cite{hargrove1999using} developed a parallel multivariate geographic clustering algorithm in C using the Message Passing Interface (MPI). Rather than relying on expertise for classification, their method places individual raster cells in a data space where each dimension represents an environmental characteristic.  For example, when analysing precipitation, mean temperature, and wind speeds, each raster cell would have a coordinate based on the three variables (e.g., $u_{1} = (0, 0.5, 23)$). Kumar et al. \cite{kumar2011parallel} later optimized this implementation using the triangular inequality to remove unnecessary calculations.
+
+The focus of the work reported here is the design and implementation of a parallel K-means clustering algorithm in R that is easily adjusted for n variables, based on previous literature in parallel clustering and ecoregions. Utilizing the computational powers of AWS EC2 machines and large historical and future climate data provided by WorldClim, we test the accuracy, speed, and flexibility of the algorithm as a classification system for predicting shifts in ecoregions resulting from climate change.
 
 
 % this info creates the bibliography
