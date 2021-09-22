@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+% increase margins
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+
+% this puts two lines between paragraphs and no indent
+\usepackage[parfill]{parskip}
+
+% set up colors
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\definecolor{torontoblue}{HTML}{00204E}
+\definecolor{linkblue}{HTML}{0000FF}
+
+% define hyperlink style
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=linkblue,urlcolor=linkblue,
+            anchorcolor=linkblue,citecolor=linkblue}
+
+
+%opening
+\title{Weekly Journal}
+\author{Leila Uy}
+
+
+
+\begin{document}
+
+\maketitle
+
+%this is commented out, no need for abstract in  your weekly assignment
+% \begin{abstract}
+% 
+% \end{abstract}
+
+\section{Work Update}
+
+This past week I spent most of my time learning more about Compute Canada (CC) and how to use it!
+
+\subsection{Compute Canada}
+I have watched the Compute Canada tutorial videos and attended a "New Users/Refesher" webinar by SHARCNET on Tuesday. I compiled everything I have learned into notes on our Teams "Compute Canada" section. I found the webinar useful because they walked us through an example of how to run a paralllel job on Graham. I am slightly anxious to use Compute Canada and I was hoping we could discuss how we should use/organize CC and we could all try it in a meeting.
+
+\subsubsection{Code Base}
+I started organizing the code base awhile back, but I need the code for every phase of our process from everyone. So I'll need everyone's code before I can start organizing it and compiling the important parts.
+
+\section{Literature Review}
+
+Lately, I've been really interested in contextualizing our ecoregion delineation results and the applicaiton of Machine Learning (ML) in our process. 
+
+In terms of applications, I found an article that uses ML to map terrestial ecoregions in a region (Purus-Madeira) of the Amazon Forest \cite{ximenes2021mapping}. They mention several articles we have read including Hargrove and Hoffman and Olsen et al. It's an interesting article because it uses a lot of what we currently doing (including K-means clustering and WorldClim data) and expands on aspects that you have discussed/touched upon previously. These concepts include altitude, slope, drainage density, vegetation, and soil. They also used one of the bioclimatic variables from WorldClim to calculate the Walsh Index (the intensity and duration of the dry season). They also briefly discuss the Davies-Bouldin index for finding the optimal number of ecoregions.
+
+In regards to ML in analyzing the effects of climate change, I started taking the ML computer science course as an elective and the neural networks course in Winter. So, I've been really interested in the applications of ML in GIS. ML is heavily statistical and mathematical, so it's really difficult to fully understand the articles after one reading, but one article talks about the accuracy of using Convolutional Neural Networks (CNN) to analyze extreme events (precipitation) for planning and adaptation to reduce vulnerability \cite{davenport2021using}. Another article, talks about how Digital Soil Mapping (DSM) can be made to be less uncertain for regional ensembles than global models but are approx. equally as accurate \cite{brungard2021regional}. Currently soil mapping efforts are predicting soil properties using a single model for large areas. 
+
+I know these articles aren't entirely applicable to the scope of the current project, so next week I'll try to focus on more applicable articles. I just found them to be really interesting (also a headache to even skim)!
+
+% this info creates the bibliography
+% YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
+\bibliography{./agclimate.bib}
+\bibliographystyle{plain}
+
+
+\end{document}
