@@ -1,0 +1,61 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+% increase margins
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+
+% this puts two lines between paragraphs and no indent
+\usepackage[parfill]{parskip}
+
+% set up colors
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\definecolor{torontoblue}{HTML}{00204E}
+\definecolor{linkblue}{HTML}{0000FF}
+
+% define hyperlink style
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=linkblue,urlcolor=linkblue,
+            anchorcolor=linkblue,citecolor=linkblue}
+
+
+%opening
+\title{Weekly Journal}
+\author{Leila Uy}
+
+
+
+\begin{document}
+
+\maketitle
+
+%this is commented out, no need for abstract in  your weekly assignment
+% \begin{abstract}
+% 
+% \end{abstract}
+
+\section{Work Update}
+
+This past week, I have been focusing mainly on reading articles because I wanted to explore different options for what I want to accomplish by the end of the Fall/Winter Term. In addition, Jishnu and I both had a assignments due this Tuesday so we agreed to meet Wednesday night (tonight) to do a test run on Compute Canada. This means we won't be able to update you on what happened in this journal, but we will let you know during the meeting.
+
+\subsection{Compute Canada Problem Resolved?}
+
+During last meeting, we talked about how I encountered no resources in my Compute Canada. I contacted help for Compute Canada and I forwarded the email to you and Jishnu. To be 100\% honest, I do not think the person who was helping us knew what was going on, so there could still be an issue we can encounter in the future. For now, I am not worried too much since I was able to SSH into the Graham machine. Hopefully, Jishnu and I will not encounter a problem tonight.
+
+\section{Literature Review}
+Last week, I focused mainly on the machine learning (computer science) side of the academic literature and possibilities in the reasearch. This week I focused on the anthropogenic and biodiversity effects as a result of climate change.
+
+One article \cite{ayanlade2017comparing} compared several Nigerian farmers' perception of climate change with their perceptions to historical meteorological data. The article noted that farmers observed several changes in the environment including changes in weather patterns, frequency of extreme events, changing times of growing seasons, different onset of rainfall, and lower crop yields. Meteorological data supports that rainfall has been more unreliable in recent years and further confirming that early and late growing season precipitation are oscillating. This study concludes that programs and government support should be provided for farmers to help cope with the changing climate. 
+
+This article relates to another which studies climate variability, farmland value, and farmers' perception of climate change \cite{arshad2017climate}. An interesting portion of the results talks about how perception of climate variability can change the adaptation behavior of farmers. They found approx. 60\% of all respondants experienced some form of impact of climate change on farm productivity. Several respondants were found to, despite experiencing these effects, continue their practices without adaptation. This indicates the presence of potential limitations like lack of sufficient agricultural information, deficient in resources or skills, and biophysical limitations. Therefore in order to create appropriate responses to climate change for farmers, agronomic and economic concerns, drivers and constraints, and perception of climatic patterns need to be taken into account.
+
+In terms of biodiversity, I learned a new word! Yay! An article called "Climate-change refugia: biodiversity in the slow land" \cite{morelli2020climate}, introduced to me the idea of "refugia" which are areas which have low velocity or relatively slow changes as a result of climate change ("the slow lane"). Although this is a temporary solution, it is thought to provide a long enough timescale for next species or ecosystems to transition.
+
+% this info creates the bibliography
+% YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
+\bibliography{./agclimate.bib}
+\bibliographystyle{plain}
+
+
+\end{document}
