@@ -1,0 +1,102 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+% increase margins
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+
+% this puts two lines between paragraphs and no indent
+\usepackage[parfill]{parskip}
+
+% set up colors
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\usepackage{tabularx}
+\definecolor{torontoblue}{HTML}{00204E}
+\definecolor{linkblue}{HTML}{0000FF}
+
+% define hyperlink style
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=linkblue,urlcolor=linkblue,
+            anchorcolor=linkblue,citecolor=linkblue}
+
+
+%opening
+\title{Weekly Journal}
+\author{Leila Uy}
+
+
+
+\begin{document}
+
+\maketitle
+
+%this is commented out, no need for abstract in  your weekly assignment
+% \begin{abstract}
+% 
+% \end{abstract}
+
+\section{Work Update}
+For the last, two weeks I have been focusing on making progress on the Happiness Index and Clustering Code projects. I took a few days rest during the break and now I feel extremely energized to start back up again (so this is an apology for all the messages and emails I have/will send)!
+
+\subsection{Happiness Index}
+I read the two articles you sent my way and I know we are going to talk about preparing visualizations of the data on Thursday so I won't talk too much. 
+
+The article uses 22 degrees C ($~$ 77 degrees F) to establish temperate climates and an index can be used with four absolute deviations from that point of reference. You suggested using WorldClim data for these maps so I was looking at the variables and it seems entirely possible since we have min., max., and average temperature. So, I will be experimenting with those variables tonight (on a low resolution for now)! 
+
+\subsection{Clustering Code}
+I sent out a When2Meet to Ryan, Soham and Jishnu to talk about:
+\begin{itemize}
+    \item Important data to include in our clustering code to identify regions where permanant tree crops can potentially grow in the future
+    \item The reasonability of finding that data for our intended locations (a flashback to the soil data D:).
+    \item Any potential roadblocks with clustering those data sets (different resolutions, etc.).
+\end{itemize}
+It's midterm season, so everyone is busy. Our best day is Thursday at 4-5pm if you want to join.
+
+\section{Literature Review}
+
+
+\begin{center}
+\begin{table}[!ht]
+\caption{The results found in the article "Climates Create Cultures"}\label{tab:1}
+\begin{tabularx}{1\textwidth} { 
+    | >{\centering\arraybackslash}X 
+    | >{\centering\arraybackslash}X 
+    | >{\centering\arraybackslash}X | }
+    \hline
+    \textbf{Poorer societies - Demanding climates} & \textbf{Richer societies - Demanding climates} & \textbf{Temperate climates} \\
+    \hline
+    Lower degrees of happiness, stronger motivation to improve happiness of others 
+    & Higher degrees of happiness, weaker motivation to improve the happiness of others 
+    & N/A \\
+    \hline
+    Voluntary workers have either predominantly egoistic or altruistic motives 
+    & Voluntary workers tend to integrate egoistic and altruistic motives
+    & Egoistic and altruistic motives for volunteer work did neither exclude nor include each other. \\
+    \hline
+    Working for money strongest & Working for fun strongest & Moderate for fun and money \\
+    \hline
+    Looking after one’s own interests first. Egoism is encouraged $>$ Cooperativeness. 
+    & Acting unselfish and prosocial. Cooperativeness is encouraged $>$ Egoism. 
+    & Concerns for self and other. Not relatively egoistic or relatively cooperative. \\
+    \hline
+    Autocratic leadership is seen as more effective 
+    & Democratic leadership as more effective 
+    & Neither downright autocratic nor downright democratic \\
+    \hline
+    \end{tabularx}
+\end{table}
+\end{center}
+
+The main get-away from the two articles you provided is that lower-income countries with more demanding climates emphasize survival while higher-income countries with more demanding climates emphasize self-expression. Temperate locations are moderate and don't show to lean on either side. \cite{van2007climates,van2012climate}
+
+I also read older articles by Evert Van de Vliert \cite{van2004colder} and one of the main things that caught my eye was the happiness index he used by Diener so, I'll take a deeper look into this \cite{diener2009factors}. 
+
+
+% this info creates the bibliography
+% YOU WILL NEED TO CHANGE THIS PATH TO THE LOCATION OF THE BIB file
+\bibliography{./agclimate.bib}
+\bibliographystyle{plain}
+
+
+\end{document}
